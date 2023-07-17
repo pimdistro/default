@@ -2,7 +2,7 @@
 local val = {}
 
 -- Require the 'lspconfig' module
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 
 -- Specify the language servers to be used, that don't need configuration
 val.servers = {
@@ -15,23 +15,23 @@ val.servers = {
 }
 
 -- Setup the configuration for 'lua_ls' language server
-lspconfig.lua_ls.setup {
+lspconfig.lua_ls.setup({
   -- Attach a custom on_attach function for the language server
   on_attach = require("lsp-format").on_attach,
   settings = {
     Lua = {
       completion = {
-        callSnippet = "Replace"
+        callSnippet = "Replace",
       },
       runtime = {
         -- Specify the version of Lua being used (e.g., LuaJIT)
-        version = 'LuaJIT',
+        version = "LuaJIT",
       },
       diagnostics = {
         -- Specify global variables for diagnostics (e.g., 'vim', 'require')
         globals = {
-          'vim',
-          'require'
+          "vim",
+          "require",
         },
       },
       workspace = {
@@ -44,7 +44,7 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-}
+})
 
 -- Return the 'val' table as the module value
 return val
