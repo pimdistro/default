@@ -44,5 +44,6 @@ return {
     end,
   },
 
+  require("custom.theme"),
   require("custom.config.null_ls"),
 }
