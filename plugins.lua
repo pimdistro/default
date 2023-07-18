@@ -4,7 +4,7 @@ return {
   {
     "filipdutescu/renamer.nvim",
     config = function()
-      require("renamer").setup()
+      require("renamer").setup({})
     end,
   },
 
@@ -41,6 +41,24 @@ return {
       vim.diagnostic.config({
         virtual_text = false,
       })
+    end,
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    config = function()
+      require("barbecue").setup()
+    end,
+  },
+
+  {
+    "alpha-nvim",
+    config = function()
+      require("custom.config.alpha")
     end,
   },
 

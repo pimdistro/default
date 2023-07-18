@@ -22,7 +22,6 @@ local rename_mapping = {
 --   - command (string): The mapping command that can be used to toggle comments.
 local comment = function(id)
   assert(id == "blockwise" or id == "linewise", "Invalid 'id' option. Must be either 'blockwise' or 'linewise'.")
-
   return '<cmd>lua require("Comment.api").toggle.' .. id .. ".current()<cr>"
 end
 
