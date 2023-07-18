@@ -22,6 +22,14 @@ return {
     end,
   },
 
+  {
+    "goolord/alpha-nvim",
+    event = "VimEnter",
+    config = function()
+      require("custom.config.alpha")
+    end,
+  },
+
   -- nvim-tree (https://github.com/nvim-tree/nvim-tree.lua)
   {
     "nvim-tree/nvim-tree.lua",
@@ -52,14 +60,6 @@ return {
     },
     config = function()
       require("barbecue").setup()
-    end,
-  },
-
-  {
-    "goolord/alpha-nvim",
-    event = "VimEnter",
-    config = function()
-      require("custom.config.alpha")
     end,
   },
 
