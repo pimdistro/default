@@ -57,6 +57,7 @@ return {
 
   {
     "alpha-nvim",
+    name = "alpha-nvim",
     config = function()
       require("custom.config.alpha")
     end,
