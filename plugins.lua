@@ -57,7 +57,7 @@ return {
 
   {
     "goolord/alpha-nvim",
-    name = "alpha-nvim",
+    event = "VimEnter",
     config = function()
       require("custom.config.alpha")
     end,
