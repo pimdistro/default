@@ -56,7 +56,7 @@ return {
   },
 
   {
-    "alpha-nvim",
+    "goolord/alpha-nvim",
     name = "alpha-nvim",
     config = function()
       require("custom.config.alpha")
