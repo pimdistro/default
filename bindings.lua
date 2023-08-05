@@ -21,20 +21,20 @@ local rename_mapping = {
 -- Returns:
 --   - command (string): The mapping command that can be used to toggle comments.
 local comment = function(id)
-  assert(id == "blockwise" or id == "linewise", "Invalid 'id' option. Must be either 'blockwise' or 'linewise'.")
-  return '<cmd>lua require("Comment.api").toggle.' .. id .. ".current()<cr>"
+  return '<cmd>lua require("Comment.api").toggle.' .. id .. "<cr>"
 end
 
 return {
   n = {
     ["<F2>"] = rename_mapping,
     ["<leader>r"] = rename_mapping,
-    ["<leader>/"] = { comment("linewise") },
-    ["<leader>?"] = { comment("blockwise") },
+    ["<leader>/"] = { comment("linewise.current()") },
+    ["<leader>?"] = { comment("blockwise.current()") },
     ["<leader>h"] = { "<cmd>15Term<cr>" },
     ["<F3>"] = { "<cmd>LspLinesToggle<cr>", "Toggle the fancy error lines" },
   },
   v = {
     ["<leader>r"] = rename_mapping,
+    ["/"] = { comment("linewise(vim.fn.visualmode())") },
   },
 }

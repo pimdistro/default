@@ -11,7 +11,10 @@ val.servers = {
   "tailwindcss",
   "tsserver",
   "html",
+  "bashls",
   "cssls",
+  "hls",
+  "rust_analyzer",
 }
 
 -- Setup the configuration for 'lua_ls' language server
