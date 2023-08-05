@@ -32,6 +32,7 @@ return {
     ["<leader>?"] = { comment("blockwise.current()") },
     ["<leader>h"] = { "<cmd>15Term<cr>" },
     ["<F3>"] = { "<cmd>LspLinesToggle<cr>", "Toggle the fancy error lines" },
+    ["<C-h>"] = { "which_key" },
   },
   v = {
     ["<leader>r"] = rename_mapping,

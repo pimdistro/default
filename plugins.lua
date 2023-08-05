@@ -9,9 +9,24 @@ return {
   },
 
   {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
+  {
+    "desdic/telescope-rooter.nvim",
+    config = function()
+      require("telescope").load_extension("rooter")
+    end,
+  },
+
+  {
     "vimlab/split-term.vim",
     config = function()
       vim.cmd("set splitbelow")
+      vim.cmd(":au BufEnter * if &buftype == 'terminal' | :startinsert | endif")
     end,
   },
 
@@ -20,6 +35,13 @@ return {
     config = function()
       require("neodev").setup()
     end,
+  },
+
+  {
+    "willothy/flatten.nvim",
+    config = true,
+    lazy = false,
+    priority = 1001,
   },
 
   {
@@ -70,11 +92,14 @@ return {
     "utilyre/barbecue.nvim",
     dependencies = {
       "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
+      "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require("barbecue").setup()
-    end,
+  },
+
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
   },
 
   require("custom.theme"),
